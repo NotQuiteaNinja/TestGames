@@ -1,0 +1,3008 @@
+[
+  {
+    "id": "cli-hidden-files",
+    "subject": "cli",
+    "category": "linux",
+    "tool": "Bash / GNU tools",
+    "level": 0,
+    "title": "Reveal hidden files",
+    "prompt": "Complete ls so it includes entries whose names begin with a dot.",
+    "mode": "complete",
+    "prefix": "ls ",
+    "suffix": "",
+    "starter": "",
+    "answer": "-a",
+    "explanation": "The -a flag includes hidden entries. GNU ls also accepts --all. Flags are case-sensitive: -A is related but excludes . and ...",
+    "hint": "The short flag is a lowercase a.",
+    "tags": [
+      "arguments",
+      "bash"
+    ],
+    "estimatedSeconds": 25,
+    "order": 1,
+    "shell": "bash",
+    "variants": [
+      "--all"
+    ]
+  },
+  {
+    "id": "cli-working-directory",
+    "subject": "cli",
+    "category": "linux",
+    "tool": "Bash / GNU tools",
+    "level": 0,
+    "title": "Where am I?",
+    "prompt": "Enter the Bash command that prints the current working directory.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "pwd",
+    "explanation": "pwd prints the full path of the directory the shell is currently in. It does not change directories.",
+    "hint": "The name abbreviates print working directory.",
+    "tags": [
+      "recall",
+      "bash"
+    ],
+    "estimatedSeconds": 25,
+    "order": 2,
+    "shell": "bash",
+    "variants": []
+  },
+  {
+    "id": "cli-first-lines",
+    "subject": "cli",
+    "category": "linux",
+    "tool": "Bash / GNU tools",
+    "level": 1,
+    "title": "Inspect the start of a log",
+    "prompt": "Complete head to print the first 5 lines of access.log.",
+    "mode": "complete",
+    "prefix": "head ",
+    "suffix": " access.log",
+    "starter": "",
+    "answer": "-n 5",
+    "explanation": "head reads the beginning of a file. -n 5 selects five lines; access.log is the filename.",
+    "hint": "Use -n followed by the number of lines.",
+    "tags": [
+      "arguments",
+      "bash"
+    ],
+    "estimatedSeconds": 45,
+    "order": 3,
+    "shell": "bash",
+    "variants": [
+      "--lines=5",
+      "-5"
+    ]
+  },
+  {
+    "id": "cli-find-logs",
+    "subject": "cli",
+    "category": "linux",
+    "tool": "Bash / GNU tools",
+    "level": 2,
+    "title": "Find log files",
+    "prompt": "Complete find to locate regular files under /var/log whose names end in .log. Quote the filename pattern so the shell does not expand it.",
+    "mode": "complete",
+    "prefix": "find /var/log ",
+    "suffix": "",
+    "starter": "",
+    "answer": "-type f -name \"*.log\"",
+    "explanation": "-type f restricts results to regular files. -name matches the filename; quoting *.log leaves the wildcard for find to interpret.",
+    "hint": "Combine -type f with -name and a quoted pattern.",
+    "tags": [
+      "arguments",
+      "bash"
+    ],
+    "estimatedSeconds": 65,
+    "order": 4,
+    "shell": "bash",
+    "variants": [
+      "-type f -name '*.log'",
+      "-name \"*.log\" -type f",
+      "-name '*.log' -type f"
+    ]
+  },
+  {
+    "id": "cli-cmd-all-files",
+    "subject": "cli",
+    "category": "windows",
+    "tool": "CMD",
+    "level": 0,
+    "title": "Show every entry",
+    "prompt": "Complete CMD dir to include hidden and system entries as well as ordinary files.",
+    "mode": "complete",
+    "prefix": "dir ",
+    "suffix": "",
+    "starter": "",
+    "answer": "/a",
+    "explanation": "CMD uses slash-prefixed switches. /a without an attribute filter includes all attributes, including hidden and system entries.",
+    "hint": "Use the all-attributes switch.",
+    "tags": [
+      "arguments",
+      "cmd"
+    ],
+    "estimatedSeconds": 25,
+    "order": 5,
+    "shell": "cmd",
+    "variants": []
+  },
+  {
+    "id": "cli-cmd-change-drive",
+    "subject": "cli",
+    "category": "windows",
+    "tool": "CMD",
+    "level": 1,
+    "title": "Change drive and directory",
+    "prompt": "Complete CMD cd to change both the active drive and directory to D:\\data.",
+    "mode": "complete",
+    "prefix": "cd ",
+    "suffix": "",
+    "starter": "",
+    "answer": "/d D:\\data",
+    "explanation": "The /d switch changes the current drive as well as its current directory. Without it, cd can update another drive's saved directory without switching drives.",
+    "hint": "Start with /d, then provide the complete path.",
+    "tags": [
+      "arguments",
+      "cmd"
+    ],
+    "estimatedSeconds": 45,
+    "order": 6,
+    "shell": "cmd",
+    "variants": [
+      "/d \"D:\\data\""
+    ]
+  },
+  {
+    "id": "cli-cmd-processes",
+    "subject": "cli",
+    "category": "windows",
+    "tool": "CMD",
+    "level": 0,
+    "title": "Inspect processes in CMD",
+    "prompt": "Enter the CMD utility that lists running processes.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "tasklist",
+    "explanation": "tasklist lists processes, including their image names and process IDs. This card specifically asks for the CMD utility.",
+    "hint": "Its name combines task and list.",
+    "tags": [
+      "recall",
+      "cmd"
+    ],
+    "estimatedSeconds": 25,
+    "order": 7,
+    "shell": "cmd",
+    "variants": []
+  },
+  {
+    "id": "cli-cmd-newest",
+    "subject": "cli",
+    "category": "windows",
+    "tool": "CMD",
+    "level": 2,
+    "title": "Find the newest entries",
+    "prompt": "Complete CMD dir to include all entries, search subdirectories, and sort each listing by date with newest first.",
+    "mode": "complete",
+    "prefix": "dir ",
+    "suffix": "",
+    "starter": "",
+    "answer": "/a /s /o-d",
+    "explanation": "/a includes all entries; /s searches subdirectories; /o-d reverses date order. /od would put the oldest entries first.",
+    "hint": "The date sort key is d; a preceding minus reverses it.",
+    "tags": [
+      "arguments",
+      "cmd"
+    ],
+    "estimatedSeconds": 65,
+    "order": 8,
+    "shell": "cmd",
+    "variants": [
+      "/s /a /o-d",
+      "/o-d /a /s",
+      "/a /s /o:-d",
+      "/s /o-d /a",
+      "/o-d /s /a",
+      "/a /o-d /s"
+    ]
+  },
+  {
+    "id": "cli-ps-hidden",
+    "subject": "cli",
+    "category": "windows",
+    "tool": "PowerShell",
+    "level": 0,
+    "title": "Reveal hidden items in PowerShell",
+    "prompt": "Complete Get-ChildItem so it also lists hidden items in the current directory.",
+    "mode": "complete",
+    "prefix": "Get-ChildItem ",
+    "suffix": "",
+    "starter": "",
+    "answer": "-Force",
+    "explanation": "-Force includes items that are normally hidden from this listing. It does not bypass permissions.",
+    "hint": "The parameter is named Force.",
+    "tags": [
+      "arguments",
+      "powershell"
+    ],
+    "estimatedSeconds": 25,
+    "order": 9,
+    "shell": "powershell",
+    "variants": []
+  },
+  {
+    "id": "cli-ps-tail",
+    "subject": "cli",
+    "category": "windows",
+    "tool": "PowerShell",
+    "level": 1,
+    "title": "Read the end of a log",
+    "prompt": "Complete Get-Content to return only the last 5 lines of app.log.",
+    "mode": "complete",
+    "prefix": "Get-Content -Path app.log ",
+    "suffix": "",
+    "starter": "",
+    "answer": "-Tail 5",
+    "explanation": "-Path supplies the file. -Tail 5 requests the last five lines, which is useful for a quick look at recent log entries.",
+    "hint": "Use the Tail parameter and a line count.",
+    "tags": [
+      "arguments",
+      "powershell"
+    ],
+    "estimatedSeconds": 45,
+    "order": 10,
+    "shell": "powershell",
+    "variants": []
+  },
+  {
+    "id": "cli-ps-processes",
+    "subject": "cli",
+    "category": "windows",
+    "tool": "PowerShell",
+    "level": 0,
+    "title": "Inspect processes in PowerShell",
+    "prompt": "Enter the full PowerShell cmdlet name that returns running processes.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "Get-Process",
+    "explanation": "Get-Process returns process objects. Later commands can select properties or filter these objects. This exercise asks for the full cmdlet name.",
+    "hint": "PowerShell cmdlets follow the Verb-Noun naming pattern.",
+    "tags": [
+      "recall",
+      "powershell"
+    ],
+    "estimatedSeconds": 25,
+    "order": 11,
+    "shell": "powershell",
+    "variants": []
+  },
+  {
+    "id": "cli-ps-log-files",
+    "subject": "cli",
+    "category": "windows",
+    "tool": "PowerShell",
+    "level": 2,
+    "title": "Select log files in PowerShell",
+    "prompt": "Complete Get-ChildItem to return regular files in the current directory whose names match *.log.",
+    "mode": "complete",
+    "prefix": "Get-ChildItem ",
+    "suffix": "",
+    "starter": "",
+    "answer": "-File -Filter \"*.log\"",
+    "explanation": "-File excludes directories. -Filter passes the wildcard pattern to the filesystem provider. The pattern is not a regular expression.",
+    "hint": "Combine the File switch and a Filter wildcard.",
+    "tags": [
+      "arguments",
+      "powershell"
+    ],
+    "estimatedSeconds": 65,
+    "order": 12,
+    "shell": "powershell",
+    "variants": [
+      "-File -Filter '*.log'",
+      "-Filter \"*.log\" -File",
+      "-Filter '*.log' -File"
+    ]
+  },
+  {
+    "id": "regex-exact-word",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 0,
+    "title": "Match one whole word",
+    "prompt": "Match the complete lowercase string cat, and nothing before or after it. Enter the pattern without / delimiters.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "^cat$",
+    "explanation": "^ anchors the start and $ anchors the end. Without anchors, cat would also match a substring of scatter.",
+    "hint": "Put an anchor on each side of cat.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 25,
+    "order": 1,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "cat",
+        "match": true
+      },
+      {
+        "input": "Cat",
+        "match": false
+      },
+      {
+        "input": "cats",
+        "match": false
+      },
+      {
+        "input": "scatter",
+        "match": false
+      },
+      {
+        "input": "a cat",
+        "match": false
+      },
+      {
+        "input": "cat!",
+        "match": false
+      },
+      {
+        "input": "",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-digits",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 0,
+    "title": "Recognize digits",
+    "prompt": "Complete the pattern to match a nonempty string containing only ASCII digits.",
+    "mode": "complete",
+    "prefix": "^",
+    "suffix": "$",
+    "starter": "",
+    "answer": "\\d+",
+    "explanation": "In JavaScript, \\d matches an ASCII digit. + requires at least one. \\D means a non-digit and is not interchangeable.",
+    "hint": "A digit class followed by a one-or-more quantifier.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 25,
+    "order": 2,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "0",
+        "match": true
+      },
+      {
+        "input": "7",
+        "match": true
+      },
+      {
+        "input": "104",
+        "match": true
+      },
+      {
+        "input": "0009",
+        "match": true
+      },
+      {
+        "input": "",
+        "match": false
+      },
+      {
+        "input": "-7",
+        "match": false
+      },
+      {
+        "input": "1.5",
+        "match": false
+      },
+      {
+        "input": "abc",
+        "match": false
+      },
+      {
+        "input": "12a",
+        "match": false
+      },
+      {
+        "input": " 12",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-order-id",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 0,
+    "title": "Recognize an order ID",
+    "prompt": "Complete the pattern to accept order- followed by one or more digits.",
+    "mode": "complete",
+    "prefix": "^order-",
+    "suffix": "$",
+    "starter": "",
+    "answer": "\\d+",
+    "explanation": "The fixed prefix identifies an order. The digit class matches its numeric identifier; the end anchor prevents trailing letters.",
+    "hint": "Reuse the digit class and one-or-more quantifier.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 25,
+    "order": 3,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "order-104",
+        "match": true
+      },
+      {
+        "input": "order-7",
+        "match": true
+      },
+      {
+        "input": "order-000",
+        "match": true
+      },
+      {
+        "input": "order-",
+        "match": false
+      },
+      {
+        "input": "order-abc",
+        "match": false
+      },
+      {
+        "input": "preorder-7",
+        "match": false
+      },
+      {
+        "input": "order-7a",
+        "match": false
+      },
+      {
+        "input": "Order-7",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-literal-dot",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 0,
+    "title": "Repair a filename pattern",
+    "prompt": "Repair this pattern so it accepts only the literal filename app.log.",
+    "mode": "repair",
+    "prefix": "",
+    "suffix": "",
+    "starter": "^app.log$",
+    "answer": "^app\\.log$",
+    "explanation": "An unescaped dot matches almost any single character. Escaping it with a backslash makes it a literal period.",
+    "hint": "Escape the period.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 25,
+    "order": 4,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "app.log",
+        "match": true
+      },
+      {
+        "input": "appXlog",
+        "match": false
+      },
+      {
+        "input": "app-log",
+        "match": false
+      },
+      {
+        "input": "appalog",
+        "match": false
+      },
+      {
+        "input": "app.log.bak",
+        "match": false
+      },
+      {
+        "input": "APP.log",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-optional-letter",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 1,
+    "title": "Accept two spellings",
+    "prompt": "Complete the pattern to accept color and colour, with no other letters.",
+    "mode": "complete",
+    "prefix": "^colo",
+    "suffix": "r$",
+    "starter": "",
+    "answer": "u?",
+    "explanation": "? makes the preceding token optional: zero or one u. It does not allow two u characters.",
+    "hint": "Which quantifier allows zero or one?",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 45,
+    "order": 5,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "color",
+        "match": true
+      },
+      {
+        "input": "colour",
+        "match": true
+      },
+      {
+        "input": "colouur",
+        "match": false
+      },
+      {
+        "input": "colr",
+        "match": false
+      },
+      {
+        "input": "Color",
+        "match": false
+      },
+      {
+        "input": "colors",
+        "match": false
+      },
+      {
+        "input": "colorr",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-fixed-width",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 1,
+    "title": "Require a four-digit PIN",
+    "prompt": "Complete the pattern to accept exactly four ASCII digits.",
+    "mode": "complete",
+    "prefix": "^",
+    "suffix": "$",
+    "starter": "",
+    "answer": "\\d{4}",
+    "explanation": "{4} repeats the digit token exactly four times. Anchors require the whole string to have that shape.",
+    "hint": "Use a digit class with a fixed repetition count.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 45,
+    "order": 6,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "1234",
+        "match": true
+      },
+      {
+        "input": "0000",
+        "match": true
+      },
+      {
+        "input": "9876",
+        "match": true
+      },
+      {
+        "input": "123",
+        "match": false
+      },
+      {
+        "input": "12345",
+        "match": false
+      },
+      {
+        "input": "12a4",
+        "match": false
+      },
+      {
+        "input": " 1234",
+        "match": false
+      },
+      {
+        "input": "-123",
+        "match": false
+      },
+      {
+        "input": "",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-alternatives",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 1,
+    "title": "Choose cat or dog",
+    "prompt": "Write a pattern that accepts only the complete lowercase words cat or dog.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "^(cat|dog)$",
+    "explanation": "A group keeps the alternatives together so the start and end anchors apply to both choices. ^cat|dog$ would anchor the two alternatives differently.",
+    "hint": "Group the alternatives, then anchor the group.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 45,
+    "order": 7,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "cat",
+        "match": true
+      },
+      {
+        "input": "dog",
+        "match": true
+      },
+      {
+        "input": "cats",
+        "match": false
+      },
+      {
+        "input": "hotdog",
+        "match": false
+      },
+      {
+        "input": "catfish",
+        "match": false
+      },
+      {
+        "input": "Cat",
+        "match": false
+      },
+      {
+        "input": "dog!",
+        "match": false
+      },
+      {
+        "input": "",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-hex-color",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 1,
+    "title": "Recognize a six-digit color",
+    "prompt": "Complete the pattern to accept # followed by exactly six hexadecimal digits. Letters may be uppercase or lowercase.",
+    "mode": "complete",
+    "prefix": "^#",
+    "suffix": "$",
+    "starter": "",
+    "answer": "[0-9A-Fa-f]{6}",
+    "explanation": "Hexadecimal uses digits 0–9 and letters A–F. The character class permits both cases; {6} requires six characters.",
+    "hint": "Build a character class for hexadecimal, then repeat it six times.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 45,
+    "order": 8,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "#00ffAA",
+        "match": true
+      },
+      {
+        "input": "#123456",
+        "match": true
+      },
+      {
+        "input": "#ABCDEF",
+        "match": true
+      },
+      {
+        "input": "#000000",
+        "match": true
+      },
+      {
+        "input": "#123",
+        "match": false
+      },
+      {
+        "input": "#GG0000",
+        "match": false
+      },
+      {
+        "input": "123456",
+        "match": false
+      },
+      {
+        "input": "#1234567",
+        "match": false
+      },
+      {
+        "input": "#abcdeZ",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-identifier",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 2,
+    "title": "Validate a small identifier",
+    "prompt": "Match identifiers that start with an ASCII letter or underscore, then contain zero or more ASCII letters, digits, or underscores.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "^[A-Za-z_][A-Za-z0-9_]*$",
+    "explanation": "The first character has a stricter class because digits cannot lead. * allows the remaining part to be empty, so a one-character name works.",
+    "hint": "Use one character class for the first character and another for the rest.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 65,
+    "order": 9,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "x",
+        "match": true
+      },
+      {
+        "input": "_",
+        "match": true
+      },
+      {
+        "input": "name2",
+        "match": true
+      },
+      {
+        "input": "_count",
+        "match": true
+      },
+      {
+        "input": "Total_7",
+        "match": true
+      },
+      {
+        "input": "2name",
+        "match": false
+      },
+      {
+        "input": "with-dash",
+        "match": false
+      },
+      {
+        "input": "two words",
+        "match": false
+      },
+      {
+        "input": "",
+        "match": false
+      },
+      {
+        "input": "café",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-date-shape",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 2,
+    "title": "Check a date-shaped string",
+    "prompt": "Match exactly YYYY-MM-DD using digits in each position. Check the shape only, not whether the date exists.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "^\\d{4}-\\d{2}-\\d{2}$",
+    "explanation": "Fixed-width digit groups and literal hyphens describe a shape. A regex this simple intentionally accepts impossible dates such as 2026-99-99.",
+    "hint": "Use three fixed-width groups: four, two, and two digits.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 65,
+    "order": 10,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "2026-11-15",
+        "match": true
+      },
+      {
+        "input": "1999-01-01",
+        "match": true
+      },
+      {
+        "input": "2026-99-99",
+        "match": true
+      },
+      {
+        "input": "26-11-15",
+        "match": false
+      },
+      {
+        "input": "2026-1-15",
+        "match": false
+      },
+      {
+        "input": "2026/11/15",
+        "match": false
+      },
+      {
+        "input": "x2026-11-15",
+        "match": false
+      },
+      {
+        "input": "2026-11-15T00:00",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-tag-name",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 2,
+    "title": "Allow a controlled tag",
+    "prompt": "Match exactly <b>, <i>, or <em>, including the angle brackets. Closing tags and other names must fail.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "^<(b|i|em)>$",
+    "explanation": "The angle brackets are literal here. A grouped alternation limits the name to the three allowed values. This is a small pattern exercise, not a general HTML parser.",
+    "hint": "Put the three names in an alternative group inside the brackets.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 65,
+    "order": 11,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "<b>",
+        "match": true
+      },
+      {
+        "input": "<i>",
+        "match": true
+      },
+      {
+        "input": "<em>",
+        "match": true
+      },
+      {
+        "input": "</b>",
+        "match": false
+      },
+      {
+        "input": "<strong>",
+        "match": false
+      },
+      {
+        "input": "<B>",
+        "match": false
+      },
+      {
+        "input": "<em >",
+        "match": false
+      },
+      {
+        "input": "prefix<b>",
+        "match": false
+      },
+      {
+        "input": "<b><i>",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "regex-no-whitespace",
+    "subject": "regex",
+    "category": "regex",
+    "tool": "JavaScript RegExp",
+    "level": 2,
+    "title": "Reject spaces in a token",
+    "prompt": "Complete the pattern to accept one or more characters that are neither whitespace nor @.",
+    "mode": "complete",
+    "prefix": "^",
+    "suffix": "$",
+    "starter": "",
+    "answer": "[^\\s@]+",
+    "explanation": "Inside a character class, a leading ^ negates the class. \\s covers whitespace, and @ is excluded explicitly. + rejects the empty string.",
+    "hint": "Use a negated character class followed by +.",
+    "tags": [
+      "patterns",
+      "examples"
+    ],
+    "estimatedSeconds": 65,
+    "order": 12,
+    "regexFlags": "",
+    "dialect": "JavaScript",
+    "tests": [
+      {
+        "input": "alpha",
+        "match": true
+      },
+      {
+        "input": "abc-123",
+        "match": true
+      },
+      {
+        "input": "hello.world",
+        "match": true
+      },
+      {
+        "input": "42",
+        "match": true
+      },
+      {
+        "input": "",
+        "match": false
+      },
+      {
+        "input": "two words",
+        "match": false
+      },
+      {
+        "input": "a@b",
+        "match": false
+      },
+      {
+        "input": " x",
+        "match": false
+      },
+      {
+        "input": "x\ty",
+        "match": false
+      },
+      {
+        "input": "x\ny",
+        "match": false
+      }
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+    ]
+  },
+  {
+    "id": "python-count-items",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 0,
+    "title": "Count the names",
+    "prompt": "Return the number of items in names as an integer.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "len(names)",
+    "explanation": "len returns a collection's item count. It works for an empty list too.",
+    "hint": "Call the built-in length function.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 25,
+    "order": 1,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "names": [
+            "Ada",
+            "Lin",
+            "Sam"
+          ]
+        },
+        "expected": 3
+      },
+      {
+        "variables": {
+          "names": []
+        },
+        "expected": 0
+      },
+      {
+        "variables": {
+          "names": [
+            "Ada"
+          ]
+        },
+        "expected": 1
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-first-item",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 0,
+    "title": "Take the first name",
+    "prompt": "Return the first element of names. Every test supplies a nonempty list.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "names[0]",
+    "explanation": "Python indexes start at zero. names[0] selects the first element without modifying the list.",
+    "hint": "The first index is zero.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 25,
+    "order": 2,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "names": [
+            "Ada",
+            "Lin"
+          ]
+        },
+        "expected": "Ada"
+      },
+      {
+        "variables": {
+          "names": [
+            "Sam"
+          ]
+        },
+        "expected": "Sam"
+      },
+      {
+        "variables": {
+          "names": [
+            "Zed",
+            "Ada",
+            "Bo"
+          ]
+        },
+        "expected": "Zed"
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-strip",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 0,
+    "title": "Clean the edges",
+    "prompt": "Return text with leading and trailing whitespace removed. Preserve whitespace inside the text.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "text.strip()",
+    "explanation": "str.strip() removes whitespace at both ends. It leaves the interior unchanged, unlike replacing every space.",
+    "hint": "Strings have a strip method.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 25,
+    "order": 3,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "text": "  Ada Lovelace  "
+        },
+        "expected": "Ada Lovelace"
+      },
+      {
+        "variables": {
+          "text": "\tLin\n"
+        },
+        "expected": "Lin"
+      },
+      {
+        "variables": {
+          "text": "a  b"
+        },
+        "expected": "a  b"
+      },
+      {
+        "variables": {
+          "text": ""
+        },
+        "expected": ""
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-lowercase",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 0,
+    "title": "Normalize letter case",
+    "prompt": "Return word converted to lowercase.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "word.lower()",
+    "explanation": "lower() returns a new string. It does not change the original variable.",
+    "hint": "Call a string method that lowers the case.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 25,
+    "order": 4,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "word": "HELLO"
+        },
+        "expected": "hello"
+      },
+      {
+        "variables": {
+          "word": "PyThOn3"
+        },
+        "expected": "python3"
+      },
+      {
+        "variables": {
+          "word": ""
+        },
+        "expected": ""
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-last-item",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 1,
+    "title": "Read the last score",
+    "prompt": "Return the last element of scores. Every test supplies a nonempty list.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "scores[-1]",
+    "explanation": "A negative index counts backward from the end. -1 means the last element regardless of list length.",
+    "hint": "Count backward from the end using a negative index.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 45,
+    "order": 5,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "scores": [
+            2,
+            7,
+            9
+          ]
+        },
+        "expected": 9
+      },
+      {
+        "variables": {
+          "scores": [
+            0
+          ]
+        },
+        "expected": 0
+      },
+      {
+        "variables": {
+          "scores": [
+            -1,
+            4
+          ]
+        },
+        "expected": 4
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-slice",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 1,
+    "title": "Take up to three",
+    "prompt": "Return a list containing the first three elements of values, or all elements if it has fewer than three.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "values[:3]",
+    "explanation": "A slice stops before its end index. Slicing past the list's length is allowed and returns only existing elements.",
+    "hint": "Use a slice whose end index is 3.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 45,
+    "order": 6,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "values": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "variables": {
+          "values": [
+            8
+          ]
+        },
+        "expected": [
+          8
+        ]
+      },
+      {
+        "variables": {
+          "values": []
+        },
+        "expected": []
+      },
+      {
+        "variables": {
+          "values": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-total",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 1,
+    "title": "Total the scores",
+    "prompt": "Return the sum of all numbers in scores; an empty list should produce 0.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "sum(scores)",
+    "explanation": "sum adds the numbers and uses zero as its default starting value.",
+    "hint": "A built-in function computes a sum.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 45,
+    "order": 7,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "scores": [
+            2,
+            4,
+            8
+          ]
+        },
+        "expected": 14
+      },
+      {
+        "variables": {
+          "scores": []
+        },
+        "expected": 0
+      },
+      {
+        "variables": {
+          "scores": [
+            -3,
+            2
+          ]
+        },
+        "expected": -1
+      },
+      {
+        "variables": {
+          "scores": [
+            0,
+            0
+          ]
+        },
+        "expected": 0
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-comprehension",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 1,
+    "title": "Double every number",
+    "prompt": "Complete the list comprehension so each result is twice the corresponding input number.",
+    "mode": "complete",
+    "prefix": "[",
+    "suffix": " for n in numbers]",
+    "starter": "",
+    "answer": "n * 2",
+    "explanation": "The expression before for determines each output value. The loop variable n takes each value from numbers in order.",
+    "hint": "Multiply the current loop variable by two.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 45,
+    "order": 8,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "numbers": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expected": [
+          2,
+          4,
+          6
+        ]
+      },
+      {
+        "variables": {
+          "numbers": [
+            -2,
+            0,
+            4
+          ]
+        },
+        "expected": [
+          -4,
+          0,
+          8
+        ]
+      },
+      {
+        "variables": {
+          "numbers": []
+        },
+        "expected": []
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-sorted",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 2,
+    "title": "Return a sorted list",
+    "prompt": "Return numbers in ascending order as a new list. Keep repeated values.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "sorted(numbers)",
+    "explanation": "sorted returns a new list in ascending order. A set would lose duplicates, and list.sort() would return None.",
+    "hint": "Use the built-in that returns a sorted copy.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 65,
+    "order": 9,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "numbers": [
+            3,
+            1,
+            3,
+            2
+          ]
+        },
+        "expected": [
+          1,
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "variables": {
+          "numbers": [
+            -2,
+            5,
+            0
+          ]
+        },
+        "expected": [
+          -2,
+          0,
+          5
+        ]
+      },
+      {
+        "variables": {
+          "numbers": []
+        },
+        "expected": []
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-even-filter",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 2,
+    "title": "Keep the even numbers",
+    "prompt": "Return a list of only the even values in numbers, preserving their original order.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "[n for n in numbers if n % 2 == 0]",
+    "explanation": "The condition after if filters the input. A remainder of zero when dividing by two means an integer is even.",
+    "hint": "Use a list comprehension with a modulo condition.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 65,
+    "order": 10,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "numbers": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "expected": [
+          2,
+          4
+        ]
+      },
+      {
+        "variables": {
+          "numbers": [
+            -4,
+            -3,
+            0,
+            2
+          ]
+        },
+        "expected": [
+          -4,
+          0,
+          2
+        ]
+      },
+      {
+        "variables": {
+          "numbers": [
+            7,
+            7
+          ]
+        },
+        "expected": []
+      },
+      {
+        "variables": {
+          "numbers": []
+        },
+        "expected": []
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-dictionary-default",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 2,
+    "title": "Handle a missing key",
+    "prompt": "Return user's city value if the key exists. If the key is missing, return the string Unknown. Preserve an existing None value.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "user.get(\"city\", \"Unknown\")",
+    "explanation": "dict.get accepts a fallback for a missing key. It does not replace values such as None or an empty string when the key exists.",
+    "hint": "Use get with a default value.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 65,
+    "order": 11,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "user": {
+            "city": "Paris"
+          }
+        },
+        "expected": "Paris"
+      },
+      {
+        "variables": {
+          "user": {
+            "name": "Ada"
+          }
+        },
+        "expected": "Unknown"
+      },
+      {
+        "variables": {
+          "user": {
+            "city": null
+          }
+        },
+        "expected": null
+      },
+      {
+        "variables": {
+          "user": {
+            "city": ""
+          }
+        },
+        "expected": ""
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "python-average-repair",
+    "subject": "python",
+    "category": "python",
+    "tool": "Python 3",
+    "level": 2,
+    "title": "Repair a rounded-down average",
+    "prompt": "Fix the expression to return the arithmetic mean of a nonempty list of integer scores, including fractional results.",
+    "mode": "repair",
+    "prefix": "",
+    "suffix": "",
+    "starter": "sum(scores) // len(scores)",
+    "answer": "sum(scores) / len(scores)",
+    "explanation": "/ performs true division. // performs floor division, so it loses the fractional part and can round negative results downward.",
+    "hint": "Change the division operator.",
+    "tags": [
+      "expressions",
+      "values"
+    ],
+    "estimatedSeconds": 65,
+    "order": 12,
+    "dialect": "Python 3",
+    "tests": [
+      {
+        "variables": {
+          "scores": [
+            2,
+            3
+          ]
+        },
+        "expected": 2.5
+      },
+      {
+        "variables": {
+          "scores": [
+            -3,
+            2
+          ]
+        },
+        "expected": -0.5
+      },
+      {
+        "variables": {
+          "scores": [
+            9
+          ]
+        },
+        "expected": 9.0
+      }
+    ],
+    "sources": [
+      "https://docs.python.org/3/tutorial/datastructures.html"
+    ]
+  },
+  {
+    "id": "sql-select",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 0,
+    "title": "Choose a column",
+    "prompt": "Return one column: name, for every row in users. Row order does not matter.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "SELECT name FROM users",
+    "explanation": "SELECT chooses the output columns. FROM identifies the table. Returning only name keeps the result to one column.",
+    "hint": "Put the requested column after SELECT and the table after FROM.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 25,
+    "order": 1,
+    "dialect": "sqlite",
+    "ordered": false,
+    "referenceQuery": "SELECT name FROM users",
+    "tables": [
+      {
+        "name": "users",
+        "columns": [
+          "id",
+          "name",
+          "age",
+          "city"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            32,
+            "Paris"
+          ],
+          [
+            2,
+            "Bo",
+            17,
+            "Rome"
+          ],
+          [
+            3,
+            "Cy",
+            18,
+            "Paris"
+          ],
+          [
+            4,
+            "Dee",
+            45,
+            null
+          ],
+          [
+            5,
+            "Eli",
+            32,
+            "Rome"
+          ],
+          [
+            6,
+            "Fay",
+            16,
+            "Oslo"
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+    "fixtures": [
+      {
+        "name": "Example data",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ada', 32, 'Paris'), (2, 'Bo', 17, 'Rome'), (3, 'Cy', 18, 'Paris'), (4, 'Dee', 45, NULL), (5, 'Eli', 32, 'Rome'), (6, 'Fay', 16, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Different ages and cities",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ivo', 18, 'Rome'), (2, 'Jia', 17, 'Paris'), (3, 'Kai', 50, 'Oslo'), (4, 'Lou', 50, 'Paris'), (5, 'Moe', 0, NULL), (6, 'Nia', 25, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Empty table",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-adults",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 0,
+    "title": "Find adults",
+    "prompt": "Complete the condition to return the names of users aged 18 or older. The supplied suffix orders names alphabetically.",
+    "mode": "solve",
+    "prefix": "SELECT name FROM users WHERE ",
+    "suffix": " ORDER BY name",
+    "starter": "",
+    "answer": "age >= 18",
+    "explanation": ">= includes the boundary value 18. > alone would exclude an 18-year-old user.",
+    "hint": "Include equality in the comparison.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 25,
+    "order": 2,
+    "dialect": "sqlite",
+    "ordered": true,
+    "referenceQuery": "SELECT name FROM users WHERE age >= 18 ORDER BY name",
+    "tables": [
+      {
+        "name": "users",
+        "columns": [
+          "id",
+          "name",
+          "age",
+          "city"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            32,
+            "Paris"
+          ],
+          [
+            2,
+            "Bo",
+            17,
+            "Rome"
+          ],
+          [
+            3,
+            "Cy",
+            18,
+            "Paris"
+          ],
+          [
+            4,
+            "Dee",
+            45,
+            null
+          ],
+          [
+            5,
+            "Eli",
+            32,
+            "Rome"
+          ],
+          [
+            6,
+            "Fay",
+            16,
+            "Oslo"
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+    "fixtures": [
+      {
+        "name": "Example data",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ada', 32, 'Paris'), (2, 'Bo', 17, 'Rome'), (3, 'Cy', 18, 'Paris'), (4, 'Dee', 45, NULL), (5, 'Eli', 32, 'Rome'), (6, 'Fay', 16, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Different ages and cities",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ivo', 18, 'Rome'), (2, 'Jia', 17, 'Paris'), (3, 'Kai', 50, 'Oslo'), (4, 'Lou', 50, 'Paris'), (5, 'Moe', 0, NULL), (6, 'Nia', 25, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Empty table",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-city",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 0,
+    "title": "Choose one city",
+    "prompt": "Complete the condition to return names of users whose city is exactly Paris. Row order does not matter.",
+    "mode": "solve",
+    "prefix": "SELECT name FROM users WHERE ",
+    "suffix": "",
+    "starter": "",
+    "answer": "city = 'Paris'",
+    "explanation": "Single quotes delimit a SQL string literal. The column name city is an identifier and is not quoted as a string.",
+    "hint": "Compare city to a single-quoted string.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 25,
+    "order": 3,
+    "dialect": "sqlite",
+    "ordered": false,
+    "referenceQuery": "SELECT name FROM users WHERE city = 'Paris'",
+    "tables": [
+      {
+        "name": "users",
+        "columns": [
+          "id",
+          "name",
+          "age",
+          "city"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            32,
+            "Paris"
+          ],
+          [
+            2,
+            "Bo",
+            17,
+            "Rome"
+          ],
+          [
+            3,
+            "Cy",
+            18,
+            "Paris"
+          ],
+          [
+            4,
+            "Dee",
+            45,
+            null
+          ],
+          [
+            5,
+            "Eli",
+            32,
+            "Rome"
+          ],
+          [
+            6,
+            "Fay",
+            16,
+            "Oslo"
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+    "fixtures": [
+      {
+        "name": "Example data",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ada', 32, 'Paris'), (2, 'Bo', 17, 'Rome'), (3, 'Cy', 18, 'Paris'), (4, 'Dee', 45, NULL), (5, 'Eli', 32, 'Rome'), (6, 'Fay', 16, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Different ages and cities",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ivo', 18, 'Rome'), (2, 'Jia', 17, 'Paris'), (3, 'Kai', 50, 'Oslo'), (4, 'Lou', 50, 'Paris'), (5, 'Moe', 0, NULL), (6, 'Nia', 25, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Empty table",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-order",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 0,
+    "title": "Sort with a tie-breaker",
+    "prompt": "Return name and age for every user, sorted by age descending. For equal ages, put the smaller id first.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "SELECT name, age FROM users ORDER BY age DESC, id ASC",
+    "explanation": "ORDER BY can contain multiple keys. The second key gives predictable ordering when two users have the same age.",
+    "hint": "Use age DESC, then id ASC.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 25,
+    "order": 4,
+    "dialect": "sqlite",
+    "ordered": true,
+    "referenceQuery": "SELECT name, age FROM users ORDER BY age DESC, id ASC",
+    "tables": [
+      {
+        "name": "users",
+        "columns": [
+          "id",
+          "name",
+          "age",
+          "city"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            32,
+            "Paris"
+          ],
+          [
+            2,
+            "Bo",
+            17,
+            "Rome"
+          ],
+          [
+            3,
+            "Cy",
+            18,
+            "Paris"
+          ],
+          [
+            4,
+            "Dee",
+            45,
+            null
+          ],
+          [
+            5,
+            "Eli",
+            32,
+            "Rome"
+          ],
+          [
+            6,
+            "Fay",
+            16,
+            "Oslo"
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+    "fixtures": [
+      {
+        "name": "Example data",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ada', 32, 'Paris'), (2, 'Bo', 17, 'Rome'), (3, 'Cy', 18, 'Paris'), (4, 'Dee', 45, NULL), (5, 'Eli', 32, 'Rome'), (6, 'Fay', 16, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Different ages and cities",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ivo', 18, 'Rome'), (2, 'Jia', 17, 'Paris'), (3, 'Kai', 50, 'Oslo'), (4, 'Lou', 50, 'Paris'), (5, 'Moe', 0, NULL), (6, 'Nia', 25, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Empty table",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-count",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 1,
+    "title": "Count all rows",
+    "prompt": "Return a single value: the number of rows in users, including users with a NULL city.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "SELECT COUNT(*) FROM users",
+    "explanation": "COUNT(*) counts rows. COUNT(city) counts only non-NULL city values and would miss some users.",
+    "hint": "Use the row-count form of COUNT.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 45,
+    "order": 5,
+    "dialect": "sqlite",
+    "ordered": false,
+    "referenceQuery": "SELECT COUNT(*) FROM users",
+    "tables": [
+      {
+        "name": "users",
+        "columns": [
+          "id",
+          "name",
+          "age",
+          "city"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            32,
+            "Paris"
+          ],
+          [
+            2,
+            "Bo",
+            17,
+            "Rome"
+          ],
+          [
+            3,
+            "Cy",
+            18,
+            "Paris"
+          ],
+          [
+            4,
+            "Dee",
+            45,
+            null
+          ],
+          [
+            5,
+            "Eli",
+            32,
+            "Rome"
+          ],
+          [
+            6,
+            "Fay",
+            16,
+            "Oslo"
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+    "fixtures": [
+      {
+        "name": "Example data",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ada', 32, 'Paris'), (2, 'Bo', 17, 'Rome'), (3, 'Cy', 18, 'Paris'), (4, 'Dee', 45, NULL), (5, 'Eli', 32, 'Rome'), (6, 'Fay', 16, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Different ages and cities",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ivo', 18, 'Rome'), (2, 'Jia', 17, 'Paris'), (3, 'Kai', 50, 'Oslo'), (4, 'Lou', 50, 'Paris'), (5, 'Moe', 0, NULL), (6, 'Nia', 25, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Empty table",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-distinct",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 1,
+    "title": "List known cities",
+    "prompt": "Return each distinct non-NULL city once, in alphabetical order.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "SELECT DISTINCT city FROM users WHERE city IS NOT NULL ORDER BY city",
+    "explanation": "IS NOT NULL removes missing values. DISTINCT removes duplicates from the selected city column. ORDER BY makes the requested ordering explicit.",
+    "hint": "Combine DISTINCT, IS NOT NULL, and ORDER BY.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 45,
+    "order": 6,
+    "dialect": "sqlite",
+    "ordered": true,
+    "referenceQuery": "SELECT DISTINCT city FROM users WHERE city IS NOT NULL ORDER BY city",
+    "tables": [
+      {
+        "name": "users",
+        "columns": [
+          "id",
+          "name",
+          "age",
+          "city"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            32,
+            "Paris"
+          ],
+          [
+            2,
+            "Bo",
+            17,
+            "Rome"
+          ],
+          [
+            3,
+            "Cy",
+            18,
+            "Paris"
+          ],
+          [
+            4,
+            "Dee",
+            45,
+            null
+          ],
+          [
+            5,
+            "Eli",
+            32,
+            "Rome"
+          ],
+          [
+            6,
+            "Fay",
+            16,
+            "Oslo"
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+    "fixtures": [
+      {
+        "name": "Example data",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ada', 32, 'Paris'), (2, 'Bo', 17, 'Rome'), (3, 'Cy', 18, 'Paris'), (4, 'Dee', 45, NULL), (5, 'Eli', 32, 'Rome'), (6, 'Fay', 16, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Different ages and cities",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ivo', 18, 'Rome'), (2, 'Jia', 17, 'Paris'), (3, 'Kai', 50, 'Oslo'), (4, 'Lou', 50, 'Paris'), (5, 'Moe', 0, NULL), (6, 'Nia', 25, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Empty table",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-group",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 1,
+    "title": "Count users by city",
+    "prompt": "Return city and the count of users for each non-NULL city. Sort by the count descending, then city alphabetically.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "SELECT city, COUNT(*) FROM users WHERE city IS NOT NULL GROUP BY city ORDER BY COUNT(*) DESC, city ASC",
+    "explanation": "WHERE removes rows before grouping. GROUP BY forms one group per city, and COUNT(*) summarizes each group.",
+    "hint": "Group by city, then sort the aggregate and city.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 45,
+    "order": 7,
+    "dialect": "sqlite",
+    "ordered": true,
+    "referenceQuery": "SELECT city, COUNT(*) FROM users WHERE city IS NOT NULL GROUP BY city ORDER BY COUNT(*) DESC, city ASC",
+    "tables": [
+      {
+        "name": "users",
+        "columns": [
+          "id",
+          "name",
+          "age",
+          "city"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            32,
+            "Paris"
+          ],
+          [
+            2,
+            "Bo",
+            17,
+            "Rome"
+          ],
+          [
+            3,
+            "Cy",
+            18,
+            "Paris"
+          ],
+          [
+            4,
+            "Dee",
+            45,
+            null
+          ],
+          [
+            5,
+            "Eli",
+            32,
+            "Rome"
+          ],
+          [
+            6,
+            "Fay",
+            16,
+            "Oslo"
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+    "fixtures": [
+      {
+        "name": "Example data",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ada', 32, 'Paris'), (2, 'Bo', 17, 'Rome'), (3, 'Cy', 18, 'Paris'), (4, 'Dee', 45, NULL), (5, 'Eli', 32, 'Rome'), (6, 'Fay', 16, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Different ages and cities",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ivo', 18, 'Rome'), (2, 'Jia', 17, 'Paris'), (3, 'Kai', 50, 'Oslo'), (4, 'Lou', 50, 'Paris'), (5, 'Moe', 0, NULL), (6, 'Nia', 25, 'Oslo');"
+        ]
+      },
+      {
+        "name": "Empty table",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-join",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 1,
+    "title": "Attach names to orders",
+    "prompt": "Return each order's user name and total, ordered by order id. Match orders.user_id to users.id.",
+    "mode": "solve",
+    "prefix": "",
+    "suffix": "",
+    "starter": "",
+    "answer": "SELECT u.name, o.total FROM orders o JOIN users u ON o.user_id = u.id ORDER BY o.id",
+    "explanation": "JOIN combines related rows. The ON condition states the relationship between each order and its user. One user can appear more than once when they have several orders.",
+    "hint": "Join on the user ID, then order by the order ID.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 45,
+    "order": 8,
+    "dialect": "sqlite",
+    "ordered": true,
+    "referenceQuery": "SELECT u.name, o.total FROM orders o JOIN users u ON o.user_id = u.id ORDER BY o.id",
+    "tables": [
+      {
+        "name": "users",
+        "columns": [
+          "id",
+          "name",
+          "age",
+          "city"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            32,
+            "Paris"
+          ],
+          [
+            2,
+            "Bo",
+            17,
+            "Rome"
+          ],
+          [
+            3,
+            "Cy",
+            18,
+            "Paris"
+          ],
+          [
+            4,
+            "Dee",
+            45,
+            null
+          ],
+          [
+            5,
+            "Eli",
+            32,
+            "Rome"
+          ],
+          [
+            6,
+            "Fay",
+            16,
+            "Oslo"
+          ]
+        ]
+      },
+      {
+        "name": "orders",
+        "columns": [
+          "id",
+          "user_id",
+          "total"
+        ],
+        "rows": [
+          [
+            10,
+            1,
+            25
+          ],
+          [
+            11,
+            3,
+            40
+          ],
+          [
+            12,
+            1,
+            15
+          ],
+          [
+            13,
+            5,
+            0
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);\nCREATE TABLE orders (id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL, total INTEGER NOT NULL);",
+    "fixtures": [
+      {
+        "name": "Example orders",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ada', 32, 'Paris'), (2, 'Bo', 17, 'Rome'), (3, 'Cy', 18, 'Paris'), (4, 'Dee', 45, NULL), (5, 'Eli', 32, 'Rome'), (6, 'Fay', 16, 'Oslo');",
+          "CREATE TABLE orders (id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL, total INTEGER NOT NULL);",
+          "INSERT INTO orders VALUES (10, 1, 25), (11, 3, 40), (12, 1, 15), (13, 5, 0);"
+        ]
+      },
+      {
+        "name": "Different order owners",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "INSERT INTO users VALUES (1, 'Ivo', 18, 'Rome'), (2, 'Jia', 17, 'Paris'), (3, 'Kai', 50, 'Oslo'), (4, 'Lou', 50, 'Paris'), (5, 'Moe', 0, NULL), (6, 'Nia', 25, 'Oslo');",
+          "CREATE TABLE orders (id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL, total INTEGER NOT NULL);",
+          "INSERT INTO orders VALUES (10, 3, 5), (11, 6, 90), (12, 2, 5);"
+        ]
+      },
+      {
+        "name": "No orders",
+        "setup": [
+          "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, city TEXT);",
+          "CREATE TABLE orders (id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL, total INTEGER NOT NULL);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-using-repair",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 2,
+    "title": "Repair a missing join",
+    "prompt": "Repair the query to join a and b on their shared id. Return id, label, and note for matching rows, ordered by id.",
+    "mode": "repair",
+    "prefix": "",
+    "suffix": "",
+    "starter": "SELECT id, label, note FROM a USING (id) ORDER BY id",
+    "answer": "SELECT id, label, note FROM a JOIN b USING (id) ORDER BY id",
+    "explanation": "USING (id) supplies the equality condition for a JOIN. It cannot join anything on its own: both tables and JOIN must be present.",
+    "hint": "Insert JOIN b before USING.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 65,
+    "order": 9,
+    "dialect": "sqlite",
+    "ordered": true,
+    "referenceQuery": "SELECT id, label, note FROM a JOIN b USING (id) ORDER BY id",
+    "tables": [
+      {
+        "name": "a",
+        "columns": [
+          "id",
+          "label"
+        ],
+        "rows": [
+          [
+            1,
+            "one"
+          ],
+          [
+            2,
+            "two"
+          ],
+          [
+            4,
+            "four"
+          ]
+        ]
+      },
+      {
+        "name": "b",
+        "columns": [
+          "id",
+          "note"
+        ],
+        "rows": [
+          [
+            1,
+            "first"
+          ],
+          [
+            3,
+            "third"
+          ],
+          [
+            4,
+            "fourth"
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE a (id INTEGER PRIMARY KEY, label TEXT);\nCREATE TABLE b (id INTEGER PRIMARY KEY, note TEXT);",
+    "fixtures": [
+      {
+        "name": "Shared and unmatched IDs",
+        "setup": [
+          "CREATE TABLE a (id INTEGER PRIMARY KEY, label TEXT);",
+          "INSERT INTO a VALUES (1, 'one'), (2, 'two'), (4, 'four');",
+          "CREATE TABLE b (id INTEGER PRIMARY KEY, note TEXT);",
+          "INSERT INTO b VALUES (1, 'first'), (3, 'third'), (4, 'fourth');"
+        ]
+      },
+      {
+        "name": "Another intersection",
+        "setup": [
+          "CREATE TABLE a (id INTEGER PRIMARY KEY, label TEXT);",
+          "INSERT INTO a VALUES (5, 'five'), (7, 'seven');",
+          "CREATE TABLE b (id INTEGER PRIMARY KEY, note TEXT);",
+          "INSERT INTO b VALUES (7, 'seventh'), (8, 'eighth');"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-tree-roots",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 2,
+    "title": "Tree 1 / find the roots",
+    "prompt": "Complete the condition to return id and name for every root node. Roots have no parent. The result is ordered by id.",
+    "mode": "solve",
+    "prefix": "SELECT id, name FROM nodes WHERE ",
+    "suffix": " ORDER BY id",
+    "starter": "",
+    "answer": "parent_id IS NULL",
+    "explanation": "A root has a missing parent_id. SQL tests missing values with IS NULL; = NULL does not perform the intended test.",
+    "hint": "Use IS NULL for a missing parent.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 65,
+    "order": 10,
+    "dialect": "sqlite",
+    "ordered": true,
+    "referenceQuery": "SELECT id, name FROM nodes WHERE parent_id IS NULL ORDER BY id",
+    "tables": [
+      {
+        "name": "nodes",
+        "columns": [
+          "id",
+          "name",
+          "parent_id"
+        ],
+        "rows": [
+          [
+            1,
+            "Root",
+            null
+          ],
+          [
+            2,
+            "Projects",
+            1
+          ],
+          [
+            3,
+            "Notes",
+            1
+          ],
+          [
+            4,
+            "Game",
+            2
+          ],
+          [
+            5,
+            "Archive",
+            2
+          ],
+          [
+            6,
+            "Draft",
+            3
+          ],
+          [
+            9,
+            "Other root",
+            null
+          ],
+          [
+            10,
+            "Other child",
+            9
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);",
+    "fixtures": [
+      {
+        "name": "Two trees",
+        "setup": [
+          "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);",
+          "INSERT INTO nodes VALUES (1, 'Root', NULL), (2, 'Projects', 1), (3, 'Notes', 1), (4, 'Game', 2), (5, 'Archive', 2), (6, 'Draft', 3), (9, 'Other root', NULL), (10, 'Other child', 9);"
+        ]
+      },
+      {
+        "name": "A deeper tree",
+        "setup": [
+          "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);",
+          "INSERT INTO nodes VALUES (1, 'Home', NULL), (2, 'Documents', 1), (4, 'Work', 2), (5, 'Report', 4), (8, 'Separate', NULL), (9, 'Separate child', 8);"
+        ]
+      },
+      {
+        "name": "No nodes",
+        "setup": [
+          "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-tree-step",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 2,
+    "title": "Tree 2 / connect one level",
+    "prompt": "Complete the join condition to return the direct children of node 1. tree contains node 1; child ranges over nodes.",
+    "mode": "solve",
+    "prefix": "WITH tree AS (SELECT id, name, parent_id FROM nodes WHERE id = 1)\nSELECT child.id, child.name FROM nodes child JOIN tree ON ",
+    "suffix": "\nORDER BY child.id",
+    "starter": "",
+    "answer": "child.parent_id = tree.id",
+    "explanation": "The child's parent_id points to the parent's id. This is the relationship a recursive query will reuse for each new level.",
+    "hint": "Match the child's parent reference to tree's id.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 65,
+    "order": 11,
+    "dialect": "sqlite",
+    "ordered": true,
+    "referenceQuery": "WITH tree AS (SELECT id, name, parent_id FROM nodes WHERE id = 1)\nSELECT child.id, child.name FROM nodes child JOIN tree ON child.parent_id = tree.id\nORDER BY child.id",
+    "tables": [
+      {
+        "name": "nodes",
+        "columns": [
+          "id",
+          "name",
+          "parent_id"
+        ],
+        "rows": [
+          [
+            1,
+            "Root",
+            null
+          ],
+          [
+            2,
+            "Projects",
+            1
+          ],
+          [
+            3,
+            "Notes",
+            1
+          ],
+          [
+            4,
+            "Game",
+            2
+          ],
+          [
+            5,
+            "Archive",
+            2
+          ],
+          [
+            6,
+            "Draft",
+            3
+          ],
+          [
+            9,
+            "Other root",
+            null
+          ],
+          [
+            10,
+            "Other child",
+            9
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);",
+    "fixtures": [
+      {
+        "name": "Two trees",
+        "setup": [
+          "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);",
+          "INSERT INTO nodes VALUES (1, 'Root', NULL), (2, 'Projects', 1), (3, 'Notes', 1), (4, 'Game', 2), (5, 'Archive', 2), (6, 'Draft', 3), (9, 'Other root', NULL), (10, 'Other child', 9);"
+        ]
+      },
+      {
+        "name": "A deeper tree",
+        "setup": [
+          "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);",
+          "INSERT INTO nodes VALUES (1, 'Home', NULL), (2, 'Documents', 1), (4, 'Work', 2), (5, 'Report', 4), (8, 'Separate', NULL), (9, 'Separate child', 8);"
+        ]
+      },
+      {
+        "name": "No nodes",
+        "setup": [
+          "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  },
+  {
+    "id": "sql-tree-recursive",
+    "subject": "sql",
+    "category": "sql",
+    "tool": "SQLite",
+    "level": 2,
+    "title": "Tree 3 / walk the descendants",
+    "prompt": "Complete the recursive join to return node 1 and all of its descendants, as id and name ordered by id. The other root's tree must be excluded.",
+    "mode": "solve",
+    "prefix": "WITH RECURSIVE tree(id, name, parent_id) AS (\n  SELECT id, name, parent_id FROM nodes WHERE id = 1\n  UNION ALL\n  SELECT n.id, n.name, n.parent_id FROM nodes n JOIN tree ON ",
+    "suffix": "\n)\nSELECT id, name FROM tree ORDER BY id",
+    "starter": "",
+    "answer": "n.parent_id = tree.id",
+    "explanation": "The first SELECT seeds tree with node 1. The recursive SELECT finds children of the rows already reached. UNION ALL appends each new level until there are no more children. These fixtures contain trees with no cycles.",
+    "hint": "Reuse the parent-child relationship from the previous exercise.",
+    "tags": [
+      "queries",
+      "result-checking"
+    ],
+    "estimatedSeconds": 65,
+    "order": 12,
+    "dialect": "sqlite",
+    "ordered": true,
+    "referenceQuery": "WITH RECURSIVE tree(id, name, parent_id) AS (\n  SELECT id, name, parent_id FROM nodes WHERE id = 1\n  UNION ALL\n  SELECT n.id, n.name, n.parent_id FROM nodes n JOIN tree ON n.parent_id = tree.id\n)\nSELECT id, name FROM tree ORDER BY id",
+    "tables": [
+      {
+        "name": "nodes",
+        "columns": [
+          "id",
+          "name",
+          "parent_id"
+        ],
+        "rows": [
+          [
+            1,
+            "Root",
+            null
+          ],
+          [
+            2,
+            "Projects",
+            1
+          ],
+          [
+            3,
+            "Notes",
+            1
+          ],
+          [
+            4,
+            "Game",
+            2
+          ],
+          [
+            5,
+            "Archive",
+            2
+          ],
+          [
+            6,
+            "Draft",
+            3
+          ],
+          [
+            9,
+            "Other root",
+            null
+          ],
+          [
+            10,
+            "Other child",
+            9
+          ]
+        ]
+      }
+    ],
+    "schema": "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);",
+    "fixtures": [
+      {
+        "name": "Two trees",
+        "setup": [
+          "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);",
+          "INSERT INTO nodes VALUES (1, 'Root', NULL), (2, 'Projects', 1), (3, 'Notes', 1), (4, 'Game', 2), (5, 'Archive', 2), (6, 'Draft', 3), (9, 'Other root', NULL), (10, 'Other child', 9);"
+        ]
+      },
+      {
+        "name": "A deeper tree",
+        "setup": [
+          "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);",
+          "INSERT INTO nodes VALUES (1, 'Home', NULL), (2, 'Documents', 1), (4, 'Work', 2), (5, 'Report', 4), (8, 'Separate', NULL), (9, 'Separate child', 8);"
+        ]
+      },
+      {
+        "name": "No nodes",
+        "setup": [
+          "CREATE TABLE nodes (id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.sqlite.org/lang_select.html"
+    ]
+  }
+]

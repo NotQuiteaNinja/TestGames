@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "game": "cmdrush",
+  "files": {
+    "exercises": "content/exercises.json",
+    "legacy": "content/legacy.json"
+  }
+}

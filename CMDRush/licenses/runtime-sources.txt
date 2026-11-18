@@ -1,0 +1,28 @@
+VidyaGames runtime sources and licenses
+
+The individual license notices in this directory accompany their bundled code/fonts.
+No original music recordings were transcoded or modified. See music/ATTRIBUTION.md
+and the original music metadata for their credits and license terms.
+
+React / React DOM 19.3.1: https://github.com/facebook/react (MIT)
+Lucide React 0.542.0: https://github.com/lucide-icons/lucide (ISC and MIT notices included)
+Three.js 0.180.0: https://github.com/mrdoob/three.js (MIT)
+OGL 1.0.11: https://github.com/oframe/ogl (Unlicense, as declared in its npm package)
+VGPU 0.3.1: https://www.npmjs.com/package/vgpu (MIT notice included)
+JetBrains Mono / Manrope through Fontsource: corresponding SIL OFL notices included
+React Bits: original license included; adapted component sources remain in dev.
+
+CMDRush only:
+Pyodide npm release 314.0.8 is distributed unchanged under MPL 2.0.
+Its source and release history are freely available at https://github.com/pyodide/pyodide
+and https://github.com/pyodide/pyodide/releases . See pyodide-MPL-2.0.txt.
+CPython source: https://github.com/python/cpython ; see python-license.txt.
+sql.js 1.16.0: https://github.com/sql-js/sql.js ; see sql.js.txt.
+
+ChessRush only:
+The bundled Stockfish Lite engine has its matching source and GPL license in engine/.
+chess.js has its BSD-2-Clause notice here. Chess data and puzzle credits are recorded
+in chess-data.md and punishment.md.
+
+MindRush only:
+Learning source credits and adaptation records are in learning.md and *-sources.json.
